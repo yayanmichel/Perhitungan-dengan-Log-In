@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator</title>
+
+<body>
+
+  <div class="container">
+      <h1>BMI Kalkulator</h1>
+  <div class="display">
+    <h3>Hasil Perhitungan</h3>
+      <p id="bmi">?</p>
+      <p id="keterangan">?</p>
+  </div>
+
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Masukan Tinggi Badan" id="ipt_t">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Masukan Berat Badan" id="ipt_b">
+        <button onclick="hitung()" class="buttons">Hitung</button>
+      </div>
+    </div>
+
+</div>
+</ul>
+
+
+</body>
+
+ 
+</body>
+</html>
+<script>
+var tinggi,berat,keterangan,bmi;
+function hitung() {
+	tinggi = parseFloat(document.getElementById("ipt_t").value);
+	tinggi /= 100;
+	berat = parseFloat(document.getElementById("ipt_b").value);
+	bmi = berat / (tinggi * tinggi);
+
+	if (bmi < 18.5) {
+		keterangan = "Berat Badan Kurang 😒";
+         
+	}else if ((bmi >= 18.5 && bmi <= 24.9)){
+		keterangan = "Normal😍";
+         
+	}else if ((bmi >= 25 && bmi <= 29.9)){
+		keterangan = "Kegemukan 😮";
+         
+	}else {
+		keterangan = "sangat kegemukan 😱";
+        
+	}
+	document.getElementById('bmi').innerHTML =  + bmi.toFixed(1);
+	document.getElementById('keterangan').innerHTML = keterangan;
+}
+</script>

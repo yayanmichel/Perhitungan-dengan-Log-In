@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Calculator</title>
+ <style type="text/css">
+ 
+ </style>
+
+</head>
+<body1>
+
+
+ <form name="calculator" class="calculator-card">
+  
+  <table style="background-color: " class="tabel">
+        <h1> Calculator</h1>
+   <div class="mb-6">
+    <label for="base-input" class="">Masukan Angka</label>
+    <input type="text" id="angka1" class="">
+     <div class="mb-6">
+    <label for="base-input" class="">Masukan Angka</label>
+    <input type="text" id="angka2" class="">
+     <div class="mb-6">
+
+
+    <label for="base-input" class="">Hasil</label>
+    <input type="text" id="hasil" class="" disabled>
+
+
+   <td colspan="4" align="center">
+     <input class="btn btn-primary tombol" type="button" onclick="tambah()" value="  +  ">
+     <input class="btn btn-success tombol" type="button" onclick="kurang()" value="  -  ">
+     <input class="btn btn-danger tombol" type="button" onclick="kali()" value="  *  ">
+     <input class="btn btn-warning tombol" type="button" onclick="bagi()" value="  /  ">
+
+
+</div>
+ 
+    </td>
+   </tr>
+  </table>
+ </form>
+
+
+<script>function tambah(){
+    var angka1=parseFloat(document.calculator.angka1.value);
+    var angka2=parseFloat(document.calculator.angka2.value);
+    var hasil= angka1+angka2;
+    document.calculator.hasil.value=hasil;
+   }
+   function kurang(){
+    var angka1=parseFloat(document.calculator.angka1.value);
+    var angka2=parseFloat(document.calculator.angka2.value);
+    var hasil= angka1-angka2;
+    document.calculator.hasil.value=hasil;
+   }
+   function kali(){
+    var angka1=parseFloat(document.calculator.angka1.value);
+    var angka2=parseFloat(document.calculator.angka2.value);
+    var hasil= angka1*angka2;
+    document.calculator.hasil.value=hasil;
+   }
+   function bagi(){
+    var angka1=parseFloat(document.calculator.angka1.value);
+    var angka2=parseFloat(document.calculator.angka2.value);
+    var hasil= angka1/angka2;
+    document.calculator.hasil.value=hasil;
+   }
+
+   </script>
+
+<script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+</script>
+</body1>
+</html>
